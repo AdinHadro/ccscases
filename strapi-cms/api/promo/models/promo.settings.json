@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promos",
+  "info": {
+    "name": "Promo",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}
