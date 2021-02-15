@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "products": {
+      "type": "json"
+    },
+    "buyerName": {
+      "type": "string"
+    },
+    "buyerLastname": {
+      "type": "string"
+    },
+    "buyerEmail": {
+      "type": "string"
+    }
+  }
+}
