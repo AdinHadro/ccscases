@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "products",
+  "collectionName": "posts",
   "info": {
-    "name": "Product",
-    "description": ""
+    "name": "Post"
   },
   "options": {
     "increments": true,
@@ -11,16 +10,13 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "postTitle": {
       "type": "string"
     },
-    "description": {
+    "postText": {
       "type": "richtext"
     },
-    "price": {
-      "type": "integer"
-    },
-    "image": {
+    "postImg": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -33,10 +29,6 @@
     },
     "Slug": {
       "type": "string"
-    },
-    "reviews": {
-      "via": "product",
-      "collection": "reviews"
     }
   }
 }

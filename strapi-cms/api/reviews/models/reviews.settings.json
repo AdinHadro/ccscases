@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "reviews",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "product": {
+      "model": "product",
+      "via": "reviews"
+    },
+    "reviev": {
+      "type": "richtext"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

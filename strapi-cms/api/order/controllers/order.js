@@ -10,6 +10,7 @@ module.exports = {
       postalCode,
       token,
       city,
+      state,
       buyerName,
       buyerLastname,
       buyerEmail
@@ -32,6 +33,7 @@ module.exports = {
           products,
           postalCode,
           city,
+          state,
           buyerName,
           buyerLastname,
           buyerEmail,
