@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_numbers_firsts",
+  "info": {
+    "name": "first",
+    "icon": "child"
+  },
+  "options": {},
+  "attributes": {
+    "sometitle": {
+      "type": "string"
+    },
+    "somenumber": {
+      "type": "biginteger"
+    }
+  }
+}

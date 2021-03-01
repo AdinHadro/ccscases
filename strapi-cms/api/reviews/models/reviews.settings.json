@@ -26,6 +26,13 @@
     },
     "email": {
       "type": "string"
+    },
+    "isPublished": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "publish"
+      ]
     }
   }
 }

@@ -40,6 +40,12 @@
     },
     "buyerState": {
       "type": "string"
+    },
+    "buyerCountry": {
+      "type": "string"
+    },
+    "address2": {
+      "type": "string"
     }
   }
 }

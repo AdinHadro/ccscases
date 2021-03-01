@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_numbers_seconds",
+  "info": {
+    "name": "second",
+    "icon": "arrow-circle-right"
+  },
+  "options": {},
+  "attributes": {
+    "somerichtext": {
+      "type": "richtext"
+    },
+    "somecheck": {
+      "type": "boolean"
+    }
+  }
+}
