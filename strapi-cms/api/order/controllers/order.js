@@ -70,7 +70,9 @@ const saveInStrapi = async (body) => {
 module.exports = {
   create: async (ctx) => {
     try {
-      await sendToStripe(ctx.request.body);
+
+      if(ctx.request.body.paymentProvider === 'stripe')
+        await sendToStripe(ctx.request.body);
 
       const order = await saveInStrapi(ctx.request.body);
 
