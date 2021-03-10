@@ -1,6 +1,6 @@
 {
   "name": "strapi-cms",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
@@ -8,13 +8,14 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "production-build": "cross-env NODE_ENV=production npm run build",
-    "production-start": "cross-env NODE_ENV=production npm start",
+    "production-build": "cross-env NODE_ENV=production yarn run build",
+    "production-start": "cross-env NODE_ENV=production yarn start",
     "production": "yarn production-build && yarn production-start"
   },
-  "devDependencies": {},
+  "devDependencies": { },
   "dependencies": {
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
     "knex": "<0.20.0",
     "pg": "^8.5.1",
     "slugify": "^1.4.5",
@@ -32,7 +33,7 @@
     "stripe": "^8.135.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Adin Hadrovic"
   },
   "strapi": {
     "uuid": "d74b054b-001c-418a-ae30-30de589afd69"
