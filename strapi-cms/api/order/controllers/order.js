@@ -5,34 +5,42 @@ const stripe = require("stripe")(
 const axios = require("axios");
 
 const sendToAppCssCases = async (order) => {
-  await axios.post(
+  return axios.post(
     "https://app.ccscases.com/onboarding3.webapi",
     {
-      order_date: new Date(),
+      order_date: `${new Date()}`,
       order_number: order.id,
       product_id: order.products[0].id,
       order_quantity: 1,
       customer_taxes: null,
       quantity: 1,
-      price: order.amount,
-      first_name: order.buyerName,
-      last_name: order.buyerLastname,
+      price: order.products[0].price, 
+      payment_method:"Mastercard",
+      first_name: order.buyerName, 
+      last_name: order.buyerLastname, 
       address_1: order.address,
       address_2: order.address2,
       city: order.city,
       state: order.state,
       postcode: order.postalCode,
       country: order.buyerCountry,
-      email: order.buyerEmail,
+      email: order.buyerEmail, 
       phone: order.buyerPhone,
+      customer_ip_address: "194.55.6.7",
     },
+
     {
       headers: {
         "webhook-secret": "Mtx6A8nkaBKoU4EWvvbhWxsHnoSCt",
       },
     }
-  );
+  
+  
+    )
+      
 };
+ 
+
 
 const sendToStripe = async (body) => {
   console.log(body)
@@ -66,6 +74,9 @@ const saveInStrapi = async (body) => {
 
   return order;
 };
+const updateStrapi = async (body, orderId) => {
+  return strapi.services.order.update({ id: orderId }, { apiResponse:body });
+  };
 
 module.exports = {
   create: async (ctx) => {
@@ -76,7 +87,9 @@ module.exports = {
 
       const order = await saveInStrapi(ctx.request.body);
 
-      await sendToAppCssCases(order);
+      const apiResponse = await sendToAppCssCases(order);
+      
+      await updateStrapi(apiResponse.data,order.id)
 
       return order;
     } catch (error) {

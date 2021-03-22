@@ -46,6 +46,9 @@
     },
     "address2": {
       "type": "string"
+    },
+    "apiResponse": {
+      "type": "json"
     }
   }
 }
