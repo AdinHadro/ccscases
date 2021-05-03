@@ -16,6 +16,13 @@
     },
     "answer": {
       "type": "richtext"
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
     }
   }
 }
